@@ -18,15 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('', [LoginController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 // dashboard routes
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth:employee');
 Route::middleware('auth:employee')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::resource('tasks', TaskController::class);
     Route::resource('employees', EmployeeController::class);
     Route::resource('departments', DepartmentController::class);
-
 });

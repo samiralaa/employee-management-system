@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Traits\SearchableTrait;
+use Illuminate\Support\Facades\Hash;
 
 class Employee extends Authenticatable
 {
@@ -30,13 +31,7 @@ class Employee extends Authenticatable
     ];
 
 
-    protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($employee) {
-            $employee->password = bcrypt($employee->password); // Encrypt password
-        });
-    }
+   
 
     public function manager()
     {

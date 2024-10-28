@@ -20,22 +20,22 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
-    
+
         // Attempt to authenticate the employee using the 'employee' guard
         if (Auth::guard('employee')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->route('home'); // Redirect on success
         }
-    
+
         // Redirect back with error message if failed
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
-    
+
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login'); // Redirect after logout
+        return redirect()->route('login.form'); // Redirect after logout
     }
 }

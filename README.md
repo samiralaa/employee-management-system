@@ -57,5 +57,9 @@ A web-based Employee Management System built with Laravel, designed to manage em
    ```
    http://localhost:8000
    ```
-   ## to run the tests
-   
+   ## to login as admin use the following credentials:
+   ```
+   email: admin@admin.com
+   password: password
+   ```
+ 

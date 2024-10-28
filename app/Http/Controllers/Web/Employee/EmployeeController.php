@@ -26,7 +26,7 @@ class EmployeeController
         $employees = $this->employeeService->getAllEmployees($search);
         return view('employees.index', compact('employees'));
     }
-public function show($id)
+    public function show($id)
     {
         $employee = $this->employeeService->find($id);
         return view('employees.show', compact('employee'));
@@ -57,7 +57,7 @@ public function show($id)
 
     public function update(UpdateEmployeeRequest $request, $id)
     {
-       
+
 
         $data = $request->validated();
 

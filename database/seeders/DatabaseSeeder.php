@@ -19,9 +19,8 @@ class DatabaseSeeder extends Seeder
         Department::factory()->count(5)->create(); // Adjust count as necessary
 
         Employee::factory()->create([
-                'first_name' => 'Test User',
-            'email' => 'test@example.com',
-         
+          
+            'email' => 'admin@admin.com',
         ]);
 
       
