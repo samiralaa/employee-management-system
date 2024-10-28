@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa; /* Light background for the main content */
+}
+
+.sidebar {
+    /* Sidebar already gets full height from the vh-100 class in the Blade file */
+}
+
+.sidebar h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: #fff; /* White text for the sidebar links */
+}
+
+.nav-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.nav-link.active {
+    background-color: #0056b3; /* Active link color */
+}
+
+.card {
+    border-radius: 10px; /* Rounded corners for the card */
+}
